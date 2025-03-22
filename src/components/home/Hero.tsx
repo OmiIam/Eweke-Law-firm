@@ -22,7 +22,7 @@ const Hero = () => {
       description: "Providing top-tier legal counsel across Corporate Law, Property Law, and Litigation matters in accordance with Nigerian legislation and international best practices.",
       cta: "Schedule a Consultation",
       link: "/contact",
-      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "public/lovable-uploads/a5e29508-5ed9-4a41-99ef-e2df9a5236a8.png"
     },
     {
       id: 2,
