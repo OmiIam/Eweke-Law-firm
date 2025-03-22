@@ -63,19 +63,19 @@
   }
   
   .btn-primary {
-    @apply bg-red hover:bg-red-dark text-white font-medium py-2 px-4 rounded transition-all duration-200;
+    @apply bg-red hover:bg-red-dark text-white font-medium py-2 px-4 rounded transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md;
   }
   
   .btn-secondary {
-    @apply bg-bluegray hover:bg-primary text-white font-medium py-2 px-4 rounded transition-all duration-200;
+    @apply bg-bluegray hover:bg-primary text-white font-medium py-2 px-4 rounded transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md;
   }
   
   .nav-link {
-    @apply text-dark hover:text-red transition-colors duration-200;
+    @apply text-dark hover:text-red transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-red after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:after:origin-bottom-left;
   }
   
   .nav-link-light {
-    @apply text-light hover:text-red transition-colors duration-200;
+    @apply text-light hover:text-red transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-red after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:after:origin-bottom-left;
   }
   
   .page-section {
@@ -87,13 +87,59 @@
   }
 }
 
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .fade-enter {
   opacity: 0;
 }
 
 .fade-enter-active {
   opacity: 1;
-  transition: opacity 300ms;
+  transition: opacity 400ms ease-out;
 }
 
 .fade-exit {
@@ -102,7 +148,37 @@
 
 .fade-exit-active {
   opacity: 0;
-  transition: opacity 300ms;
+  transition: opacity 400ms ease-out;
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.5s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
 }
 
 /* Custom scrollbar */
@@ -121,4 +197,23 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #2b2d42;
+}
+
+/* Smooth page transitions */
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
 }
