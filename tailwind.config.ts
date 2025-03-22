@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -30,12 +29,12 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#2b2d42',
-					foreground: '#edf2f4'
+					DEFAULT: '#2d232e',
+					foreground: '#f1f0ea'
 				},
 				secondary: {
-					DEFAULT: '#8d99ae',
-					foreground: '#edf2f4'
+					DEFAULT: '#534b52',
+					foreground: '#f1f0ea'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -46,9 +45,9 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: '#ef233c',
-					foreground: '#edf2f4',
-					dark: '#d90429'
+					DEFAULT: '#474448',
+					foreground: '#f1f0ea',
+					dark: '#2d232e'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -58,13 +57,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				light: '#edf2f4',
-				dark: '#2b2d42',
-				bluegray: '#8d99ae',
-				red: {
-					DEFAULT: '#ef233c',
-					dark: '#d90429'
-				},
+				light: '#f1f0ea',
+				dark: '#2d232e',
+				bluegray: '#534b52',
+				cream: '#e0ddcf',
+				offwhite: '#f1f0ea',
+				charcoal: '#474448',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

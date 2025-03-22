@@ -6,6 +6,10 @@ import FeaturedContent from '../components/home/FeaturedContent';
 import QuickLinks from '../components/home/QuickLinks';
 import NewsSection from '../components/home/NewsSection';
 import BlogSection from '../components/home/BlogSection';
+import FAQSection from '../components/home/FAQSection';
+import CaseStudiesSection from '../components/home/CaseStudiesSection';
+import AppointmentSection from '../components/home/AppointmentSection';
+import Chatbot from '../components/ui/chatbot';
 import Footer from '../components/layout/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -39,10 +43,14 @@ const Index = () => {
         <Hero />
         <FeaturedContent />
         <QuickLinks />
+        <CaseStudiesSection />
         <NewsSection />
         <BlogSection />
+        <FAQSection />
+        <AppointmentSection />
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 };
