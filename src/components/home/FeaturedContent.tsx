@@ -51,14 +51,14 @@ const FeaturedContent = () => {
   ];
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-20">
       <div className="container-lg">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2 font-serif">Featured Practice Areas</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 font-serif text-primary">Featured Practice Areas</h2>
           <p className="text-secondary text-lg max-w-2xl mx-auto">Specialized legal expertise tailored to Nigerian legal frameworks and international best practices</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature) => {
             const IconComponent = feature.icon;
             return (
@@ -68,22 +68,22 @@ const FeaturedContent = () => {
                 data-aos="fade-up" 
                 data-aos-delay={feature.id * 100}
               >
-                <Card className="h-full border border-bluegray/10 hover:shadow-md hover:border-bluegray/30 transition-all duration-300 transform hover:-translate-y-1">
+                <Card className="h-full border border-bluegray/10 hover:shadow-card-hover shadow-card transition-all duration-300 transform hover:-translate-y-2 bg-white">
                   <CardHeader className="pb-2">
-                    <div className="flex items-center mb-2">
-                      <div className="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-2xl text-primary mr-4 group-hover:bg-accent/10 group-hover:text-accent transition-colors duration-300">
-                        <IconComponent size={24} />
+                    <div className="flex items-center mb-3">
+                      <div className="w-14 h-14 bg-primary/5 rounded-lg flex items-center justify-center text-2xl text-primary mr-4 group-hover:bg-highlight/10 group-hover:text-highlight transition-colors duration-300">
+                        <IconComponent size={28} />
                       </div>
-                      <CardTitle className="text-xl">{feature.title}</CardTitle>
+                      <CardTitle className="text-xl md:text-2xl font-bold text-primary">{feature.title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-bluegray text-base">{feature.description}</CardDescription>
+                    <CardDescription className="text-bluegray text-base leading-relaxed">{feature.description}</CardDescription>
                   </CardContent>
                   <CardFooter>
                     <Link 
                       to={feature.link}
-                      className="flex items-center text-accent font-medium group-hover:text-accent-dark transition-colors duration-300"
+                      className="flex items-center text-highlight font-medium group-hover:text-highlight/80 transition-colors duration-300"
                     >
                       <span className="mr-2">Learn more</span>
                       <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />

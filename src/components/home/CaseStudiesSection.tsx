@@ -49,45 +49,45 @@ const caseStudies = [
 
 const CaseStudiesSection = () => {
   return (
-    <section className="page-section bg-offwhite" data-aos="fade-up">
+    <section className="page-section bg-offwhite py-20" data-aos="fade-up">
       <div className="container-lg">
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Notable Case Studies</h2>
-          <p className="text-secondary max-w-3xl mx-auto">
+        <div className="mb-14 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif text-primary">Notable Case Studies</h2>
+          <p className="text-secondary max-w-3xl mx-auto text-lg">
             Explore some of our most impactful legal victories and precedent-setting cases that demonstrate our expertise in Nigerian law.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {caseStudies.map((study, index) => {
             const Icon = study.icon;
             return (
-              <Card key={index} className="card-hover bg-light border-cream shadow-sm">
+              <Card key={index} className="bg-white border-cream shadow-card hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-2">
                 <CardHeader className="pb-4">
                   <div className="flex justify-between items-start">
-                    <Badge variant="outline" className="bg-cream text-charcoal">
+                    <Badge variant="outline" className="bg-highlight/10 text-highlight border-highlight/20 font-medium">
                       {study.category}
                     </Badge>
-                    <span className="text-sm text-bluegray">{study.year}</span>
+                    <span className="text-sm font-medium text-bluegray">{study.year}</span>
                   </div>
-                  <CardTitle className="mt-3 text-xl font-bold">{study.title}</CardTitle>
+                  <CardTitle className="mt-4 text-xl md:text-2xl font-bold text-primary">{study.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex items-center space-x-3 mb-4 text-accent">
-                    <Icon size={20} />
-                    <CardDescription className="text-bluegray">{study.summary}</CardDescription>
+                  <div className="flex items-center space-x-3 mb-5 text-accent">
+                    <Icon size={22} className="text-highlight" />
+                    <CardDescription className="text-bluegray text-base leading-relaxed">{study.summary}</CardDescription>
                   </div>
                   <div className="flex flex-wrap gap-2 mt-4">
                     {study.tags.map((tag, i) => (
-                      <Badge key={i} variant="secondary" className="bg-bluegray/10 text-bluegray">
+                      <Badge key={i} variant="secondary" className="bg-bluegray/5 text-bluegray border border-bluegray/10">
                         {tag}
                       </Badge>
                     ))}
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="ghost" className="text-accent hover:text-accent-dark hover:bg-cream/50 p-0">
-                    Read full case study <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="ghost" className="text-highlight hover:text-highlight/90 hover:bg-highlight/5 p-0 font-medium transition-all duration-300 group">
+                    Read full case study <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Button>
                 </CardFooter>
               </Card>
@@ -95,9 +95,9 @@ const CaseStudiesSection = () => {
           })}
         </div>
         
-        <div className="mt-10 text-center">
-          <Button className="bg-accent hover:bg-accent-dark text-offwhite">
-            View All Case Studies <BookOpen className="ml-2 h-4 w-4" />
+        <div className="mt-14 text-center">
+          <Button className="bg-accent hover:bg-accent-light text-offwhite py-6 px-8 rounded shadow-button hover:shadow-button-hover transition-all duration-300 transform hover:-translate-y-1 font-medium">
+            View All Case Studies <BookOpen className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </div>

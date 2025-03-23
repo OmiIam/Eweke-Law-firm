@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -45,10 +46,37 @@
 
   body {
     @apply bg-offwhite text-dark font-sans antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-primary;
+    @apply font-bold text-primary tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-serif;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-serif;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  p {
+    @apply leading-relaxed text-bluegray;
+  }
+  
+  a {
+    @apply transition-colors duration-300;
   }
   
   .font-serif {
@@ -58,35 +86,39 @@
 
 @layer components {
   .glass-panel {
-    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-glass;
+    @apply bg-white/90 backdrop-blur-sm border border-white/30 shadow-glass;
   }
   
   .container-lg {
-    @apply mx-auto px-4 sm:px-6 max-w-7xl;
+    @apply mx-auto px-5 sm:px-6 max-w-7xl;
   }
   
   .btn-primary {
-    @apply bg-accent hover:bg-accent-dark text-offwhite font-medium py-2 px-4 rounded transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md;
+    @apply bg-highlight hover:bg-highlight/90 text-offwhite font-medium py-3 px-5 rounded transition-all duration-300 transform hover:-translate-y-1 hover:shadow-button-hover shadow-button;
   }
   
   .btn-secondary {
-    @apply bg-bluegray hover:bg-primary text-offwhite font-medium py-2 px-4 rounded transition-all duration-300 transform hover:-translate-y-1 hover:shadow-md;
+    @apply bg-bluegray hover:bg-primary text-offwhite font-medium py-3 px-5 rounded transition-all duration-300 transform hover:-translate-y-1 hover:shadow-button-hover shadow-button;
   }
   
   .nav-link {
-    @apply text-dark hover:text-accent transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-accent after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:after:origin-bottom-left;
+    @apply text-dark hover:text-highlight transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-highlight after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:after:origin-bottom-left;
   }
   
   .nav-link-light {
-    @apply text-light hover:text-accent transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-accent after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:after:origin-bottom-left;
+    @apply text-light hover:text-highlight transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-highlight after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:after:origin-bottom-left;
   }
   
   .page-section {
-    @apply py-10 md:py-16;
+    @apply py-12 md:py-20;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-card-hover hover:-translate-y-2 shadow-card;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
@@ -227,7 +259,7 @@
 }
 
 .hover-glow {
-  @apply transition-all duration-300 hover:shadow-lg hover:shadow-accent/10;
+  @apply transition-all duration-300 hover:shadow-card-hover hover:shadow-highlight/5;
 }
 
 .text-shadow {
@@ -235,5 +267,14 @@
 }
 
 .text-gradient {
-  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-primary to-highlight bg-clip-text text-transparent;
+}
+
+/* Improve dropdown menu appearance */
+.dropdown-menu {
+  @apply bg-white border border-bluegray/10 shadow-card rounded-lg p-2 min-w-[200px] z-50;
+}
+
+.dropdown-item {
+  @apply block w-full text-left px-3 py-2 text-sm rounded-md text-bluegray hover:bg-highlight/5 hover:text-highlight transition-colors duration-200;
 }

@@ -18,26 +18,35 @@ const CaseStudies = () => <div>Case Studies Page</div>;
 // Create a path for the appointments page
 const AppointmentPage = () => <div>Appointment Page</div>;
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/practice-areas" element={<PracticeAreas />} />
-          <Route path="/attorneys" element={<Attorneys />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
-          <Route path="/appointment" element={<AppointmentPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <StickyContact />
+        <div className="min-h-screen flex flex-col antialiased">
+          <Toaster />
+          <Sonner position="top-right" closeButton theme="light" />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/practice-areas" element={<PracticeAreas />} />
+            <Route path="/attorneys" element={<Attorneys />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/appointment" element={<AppointmentPage />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <StickyContact />
+        </div>
       </TooltipProvider>
     </BrowserRouter>
   </QueryClientProvider>
