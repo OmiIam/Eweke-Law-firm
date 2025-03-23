@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -9,8 +8,10 @@ import {
   Phone, 
   Mail, 
   MapPin, 
-  User 
+  User,
+  LucideIcon 
 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -120,24 +121,26 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Link to="/client-portal" className="nav-link-light flex items-center space-x-1">
-              <User size={14} />
-              <span>Client Portal</span>
-            </Link>
+            <Button asChild variant="ghost" size="sm" className="nav-link-light flex items-center gap-1 hover:bg-white/10">
+              <Link to="/client-portal">
+                <User size={14} />
+                <span>Client Portal</span>
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
       
-      {/* Main Navigation */}
+      {/* Main Navigation - Now sticky */}
       <nav 
-        className={`py-4 w-full transition-all duration-300 ${
-          isScrolled ? 'bg-white shadow-subtle' : 'bg-white'
+        className={`py-4 w-full transition-all duration-300 fixed top-0 left-0 right-0 ${
+          isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-subtle' : 'bg-white'
         }`}
       >
         <div className="container-lg flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold tracking-tight text-primary">
+            <span className="text-2xl font-bold tracking-tight text-primary font-serif">
               EJ EWEKE <span className="text-red">&</span> Co
             </span>
           </Link>
@@ -147,20 +150,20 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <div key={link.title} className="relative group">
                 <button
-                  className="px-3 py-2 rounded-md text-dark hover:text-red flex items-center space-x-1 font-medium"
+                  className="px-3 py-2 rounded-md text-dark hover:text-accent flex items-center space-x-1 font-medium"
                   onClick={() => toggleDropdown(link.title)}
                 >
                   <span>{link.title}</span>
-                  {link.dropdown && <ChevronDown size={16} />}
+                  {link.dropdown && <ChevronDown size={16} className="transition-transform group-hover:rotate-180" />}
                 </button>
                 {link.dropdown && (
-                  <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform origin-top scale-95 group-hover:scale-100">
                     <div className="py-1" role="menu" aria-orientation="vertical">
                       {link.dropdown.map((item) => (
                         <Link
                           key={item.title}
                           to={item.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-light hover:text-red"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-light hover:text-accent transition-colors duration-150"
                           role="menuitem"
                         >
                           {item.title}
@@ -173,13 +176,13 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Search Bar */}
+          {/* Enhanced Search Bar */}
           <div className="hidden md:flex items-center">
             <div className="relative">
               <input
                 type="text"
                 placeholder="Search..."
-                className="pl-10 pr-4 py-2 border border-bluegray rounded-md focus:outline-none focus:border-primary bg-light"
+                className="pl-10 pr-4 py-2 border-2 border-bluegray rounded-md focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent bg-light transition-all duration-200"
               />
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-bluegray" size={18} />
             </div>
@@ -189,11 +192,15 @@ const Navbar = () => {
           <button
             className="lg:hidden flex items-center text-primary p-2"
             onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
+
+      {/* Add padding to account for the fixed navbar */}
+      <div className={`h-16 ${isScrolled ? 'md:h-16' : 'md:h-0'} transition-all duration-300`}></div>
 
       {/* Mobile Menu */}
       <div

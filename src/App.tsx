@@ -10,6 +10,7 @@ import PracticeAreas from "./pages/PracticeAreas";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Attorneys from "./pages/Attorneys";
+import StickyContact from "./components/ui/StickyContact";
 
 // Create a path for the legal case studies page
 const CaseStudies = () => <div>Case Studies Page</div>;
@@ -36,6 +37,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <StickyContact />
       </TooltipProvider>
     </BrowserRouter>
   </QueryClientProvider>
