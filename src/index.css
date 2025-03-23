@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 60 6% 93%;
-    --foreground: 270 13% 16%;
+    --background: 0 0% 96%;
+    --foreground: 0 0% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 270 13% 16%;
+    --card-foreground: 0 0% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 270 13% 16%;
+    --popover-foreground: 0 0% 17%;
 
-    --primary: 270 13% 16%;
-    --primary-foreground: 60 6% 93%;
+    --primary: 0 0% 23%;
+    --primary-foreground: 0 0% 96%;
 
     --secondary: 314 4% 31%;
-    --secondary-foreground: 60 6% 93%;
+    --secondary-foreground: 0 0% 96%;
 
     --muted: 314 4% 80%;
     --muted-foreground: 314 4% 40%;
 
-    --accent: 280 4% 28%;
-    --accent-foreground: 60 6% 93%;
+    --accent: 215 50% 23%;
+    --accent-foreground: 0 0% 96%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 314 4% 70%;
     --input: 314 4% 70%;
-    --ring: 280 4% 28%;
+    --ring: 215 50% 23%;
 
     --radius: 0.5rem;
   }
@@ -49,6 +49,7 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -56,19 +57,19 @@
   }
   
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-serif;
+    @apply text-4xl md:text-5xl lg:text-6xl font-serif leading-tight;
   }
   
   h2 {
-    @apply text-3xl md:text-4xl font-serif;
+    @apply text-3xl md:text-4xl font-serif leading-tight;
   }
   
   h3 {
-    @apply text-2xl md:text-3xl;
+    @apply text-2xl md:text-3xl leading-tight;
   }
   
   h4 {
-    @apply text-xl md:text-2xl;
+    @apply text-xl md:text-2xl leading-tight;
   }
   
   p {
@@ -94,15 +95,19 @@
   }
   
   .btn-primary {
-    @apply bg-highlight hover:bg-highlight/90 text-offwhite font-medium py-3 px-5 rounded transition-all duration-300 transform hover:-translate-y-1 hover:shadow-button-hover shadow-button;
+    @apply bg-info hover:bg-info/90 text-offwhite font-medium py-3 px-5 rounded transition-all duration-300 transform hover:-translate-y-1 hover:shadow-button-hover shadow-button;
   }
   
   .btn-secondary {
-    @apply bg-bluegray hover:bg-primary text-offwhite font-medium py-3 px-5 rounded transition-all duration-300 transform hover:-translate-y-1 hover:shadow-button-hover shadow-button;
+    @apply bg-accent hover:bg-accent-dark text-offwhite font-medium py-3 px-5 rounded transition-all duration-300 transform hover:-translate-y-1 hover:shadow-button-hover shadow-button;
+  }
+  
+  .btn-highlight {
+    @apply bg-highlight hover:bg-highlight/90 text-dark font-medium py-3 px-5 rounded transition-all duration-300 transform hover:-translate-y-1 hover:shadow-button-hover shadow-button;
   }
   
   .nav-link {
-    @apply text-dark hover:text-highlight transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-highlight after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:after:origin-bottom-left;
+    @apply text-dark hover:text-info transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-info after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:after:origin-bottom-left;
   }
   
   .nav-link-light {
@@ -119,6 +124,22 @@
   
   .text-balance {
     text-wrap: balance;
+  }
+
+  .section-heading {
+    @apply relative pb-3 mb-6 font-serif;
+  }
+
+  .section-heading::after {
+    @apply content-[''] absolute bottom-0 left-0 w-16 h-0.5 bg-highlight;
+  }
+
+  .section-heading-center::after {
+    @apply left-1/2 -translate-x-1/2;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-accent to-accent-light;
   }
 }
 
@@ -267,7 +288,7 @@
 }
 
 .text-gradient {
-  @apply bg-gradient-to-r from-primary to-highlight bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-accent to-info bg-clip-text text-transparent;
 }
 
 /* Improve dropdown menu appearance */
@@ -276,5 +297,31 @@
 }
 
 .dropdown-item {
-  @apply block w-full text-left px-3 py-2 text-sm rounded-md text-bluegray hover:bg-highlight/5 hover:text-highlight transition-colors duration-200;
+  @apply block w-full text-left px-3 py-2 text-sm rounded-md text-bluegray hover:bg-info/5 hover:text-info transition-colors duration-200;
+}
+
+/* Card and section enhancements */
+.card {
+  @apply bg-white rounded-lg shadow-card transition-all duration-300 hover:shadow-card-hover border border-bluegray/10;
+}
+
+.section-divider {
+  @apply w-16 h-0.5 bg-highlight mx-auto my-6;
+}
+
+.feature-icon-wrapper {
+  @apply w-16 h-16 rounded-full flex items-center justify-center bg-info/10 text-info mb-4;
+}
+
+/* Button improvements */
+.btn {
+  @apply font-medium rounded-md transition-all duration-300 inline-flex items-center justify-center;
+}
+
+.btn-blue {
+  @apply bg-info text-white hover:bg-info/90 shadow-button hover:shadow-button-hover;
+}
+
+.btn-gold {
+  @apply bg-highlight text-dark hover:bg-highlight/90 shadow-button hover:shadow-button-hover;
 }

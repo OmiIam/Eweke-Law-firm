@@ -30,14 +30,14 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#2d232e',
-					foreground: '#f1f0ea',
-					light: '#3c3040',
-					dark: '#201923'
+					DEFAULT: '#3A3A3A', // Warmed up dark grey
+					foreground: '#F5F5F5', // Soft off-white
+					light: '#4A4A4A',
+					dark: '#2C2C2C'
 				},
 				secondary: {
 					DEFAULT: '#534b52',
-					foreground: '#f1f0ea',
+					foreground: '#F5F5F5',
 					light: '#635b62',
 					dark: '#433b42'
 				},
@@ -50,10 +50,10 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: '#474448',
-					foreground: '#f1f0ea',
-					dark: '#2d232e',
-					light: '#575658'
+					DEFAULT: '#1D3557', // Deep blue accent
+					foreground: '#F5F5F5',
+					dark: '#15253E',
+					light: '#264573'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -63,16 +63,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				light: '#f1f0ea',
-				dark: '#2d232e',
+				light: '#F5F5F5', // Soft off-white
+				dark: '#2C2C2C', // Darker charcoal
 				bluegray: '#534b52',
 				cream: '#e0ddcf',
-				offwhite: '#f1f0ea',
-				charcoal: '#474448',
-				highlight: '#a3795b', // New warm accent color
-				success: '#4a7c59', // Success green
-				warning: '#d68c45', // Warning orange
-				info: '#4a6fa5', // Info blue
+				offwhite: '#F5F5F5',
+				charcoal: '#3A3A3A', // Warmed up dark grey
+				highlight: '#D4A373', // Elegant gold accent
+				success: '#4a7c59',
+				warning: '#d68c45',
+				info: '#004AAD', // Deep blue
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
