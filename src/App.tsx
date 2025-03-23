@@ -33,8 +33,19 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
+            <Route path="/about/history" element={<About />} />
+            <Route path="/about/team" element={<About />} />
+            <Route path="/about/mission" element={<About />} />
             <Route path="/practice-areas" element={<PracticeAreas />} />
+            <Route path="/practice-areas/corporate" element={<PracticeAreas />} />
+            <Route path="/practice-areas/litigation" element={<PracticeAreas />} />
+            <Route path="/practice-areas/real-estate" element={<PracticeAreas />} />
+            <Route path="/practice-areas/ip" element={<PracticeAreas />} />
+            <Route path="/practice-areas/family" element={<PracticeAreas />} />
             <Route path="/attorneys" element={<Attorneys />} />
+            <Route path="/attorneys/partners" element={<Attorneys />} />
+            <Route path="/attorneys/associates" element={<Attorneys />} />
+            <Route path="/attorneys/of-counsel" element={<Attorneys />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/appointment" element={<Appointment />} />
