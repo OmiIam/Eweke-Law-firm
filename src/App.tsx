@@ -10,13 +10,9 @@ import PracticeAreas from "./pages/PracticeAreas";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Attorneys from "./pages/Attorneys";
+import CaseStudies from "./pages/CaseStudies";
+import Appointment from "./pages/Appointment";
 import StickyContact from "./components/ui/StickyContact";
-
-// Create a path for the legal case studies page
-const CaseStudies = () => <div>Case Studies Page</div>;
-
-// Create a path for the appointments page
-const AppointmentPage = () => <div>Appointment Page</div>;
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -41,7 +37,7 @@ const App = () => (
             <Route path="/attorneys" element={<Attorneys />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/appointment" element={<AppointmentPage />} />
+            <Route path="/appointment" element={<Appointment />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

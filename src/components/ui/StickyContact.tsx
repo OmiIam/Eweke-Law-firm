@@ -2,6 +2,7 @@
 import React from 'react';
 import { Phone, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { Button } from './button';
+import { Link } from 'react-router-dom';
 
 const StickyContact = () => {
   return (
@@ -16,12 +17,14 @@ const StickyContact = () => {
       </Button>
       
       <Button 
+        asChild
         size="icon" 
         className="bg-primary hover:bg-primary-light text-white rounded-full w-14 h-14 shadow-button hover:shadow-button-hover transition-all duration-300 transform hover:-translate-y-1 animate-fade-in delay-100"
-        onClick={() => window.location.href = '/contact'}
         aria-label="Chat with us"
       >
-        <MessageCircle size={22} />
+        <Link to="/appointment">
+          <MessageCircle size={22} />
+        </Link>
       </Button>
       
       <Button 

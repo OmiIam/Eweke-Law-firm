@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
@@ -13,7 +13,7 @@ const Hero = () => {
     >
       <div className="relative w-full h-[680px] sm:h-[650px] md:h-[680px]">
         {/* Enhanced gradient overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/98 via-primary/90 to-primary/80 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-dark/95 via-primary/85 to-primary/75 z-10"></div>
         
         {/* Background Image */}
         <div 
@@ -26,7 +26,7 @@ const Hero = () => {
         ></div>
         
         {/* Enhanced textured overlay pattern */}
-        <div className="absolute inset-0 z-5 opacity-12 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+')]"></div>
+        <div className="absolute inset-0 z-5 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+')]"></div>
         
         <div className="container-lg relative z-20 flex items-center h-full pt-16 pb-20">
           <div className="max-w-3xl mx-auto md:mx-0 transition-all duration-1000">
@@ -42,10 +42,10 @@ const Hero = () => {
             <div className="flex flex-wrap gap-5 animate-slide-in">
               <Button 
                 asChild
-                variant="default"
-                className="bg-highlight hover:bg-highlight/90 text-white font-semibold py-7 px-8 rounded-md inline-flex items-center space-x-2 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-button-hover shadow-button group"
+                variant="highlight"
+                className="py-7 px-8 font-semibold rounded-md inline-flex items-center space-x-2 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-button-hover shadow-button group"
               >
-                <Link to="/contact">
+                <Link to="/appointment">
                   <span>Schedule a Consultation</span>
                   <ChevronRight size={20} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
