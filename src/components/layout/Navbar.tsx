@@ -172,14 +172,14 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/attorneys" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(
-                      navigationMenuTriggerStyle(),
-                      "text-dark font-medium"
-                    )}>
+                  <NavigationMenuLink asChild>
+                    <Link 
+                      to="/attorneys" 
+                      className={cn(navigationMenuTriggerStyle(), "text-dark font-medium")}
+                    >
                       Attorneys
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
@@ -200,25 +200,25 @@ const Navbar = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/careers" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(
-                      navigationMenuTriggerStyle(),
-                      "text-dark font-medium"
-                    )}>
+                  <NavigationMenuLink asChild>
+                    <Link 
+                      to="/careers" 
+                      className={cn(navigationMenuTriggerStyle(), "text-dark font-medium")}
+                    >
                       Careers
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link to="/contact" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(
-                      navigationMenuTriggerStyle(),
-                      "text-dark font-medium"
-                    )}>
+                  <NavigationMenuLink asChild>
+                    <Link 
+                      to="/contact" 
+                      className={cn(navigationMenuTriggerStyle(), "text-dark font-medium")}
+                    >
                       Contact
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
