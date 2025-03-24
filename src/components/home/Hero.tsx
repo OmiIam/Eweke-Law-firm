@@ -12,8 +12,8 @@ const Hero = () => {
       aria-label="Hero section"
     >
       <div className="relative w-full h-[680px] sm:h-[650px] md:h-[680px]">
-        {/* Enhanced gradient overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-dark/95 via-primary/85 to-primary/75 z-10"></div>
+        {/* Reduced gradient overlay opacity for better image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-dark/75 via-primary/60 to-primary/50 z-10"></div>
         
         {/* Background Image */}
         <div 
@@ -25,8 +25,8 @@ const Hero = () => {
           }}
         ></div>
         
-        {/* Enhanced textured overlay pattern */}
-        <div className="absolute inset-0 z-5 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+')]"></div>
+        {/* Reduced textured overlay pattern opacity */}
+        <div className="absolute inset-0 z-5 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+')]"></div>
         
         <div className="container-lg relative z-20 flex items-center h-full pt-16 pb-20">
           <div className="max-w-3xl mx-auto md:mx-0 transition-all duration-1000">
