@@ -12,6 +12,8 @@ import Contact from "./pages/Contact";
 import Attorneys from "./pages/Attorneys";
 import CaseStudies from "./pages/CaseStudies";
 import Appointment from "./pages/Appointment";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import StickyContact from "./components/ui/StickyContact";
 
 const queryClient = new QueryClient({
@@ -49,6 +51,11 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/appointment" element={<Appointment />} />
+            
+            {/* Blog Routes */}
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
