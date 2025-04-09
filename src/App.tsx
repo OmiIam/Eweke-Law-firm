@@ -14,6 +14,13 @@ import CaseStudies from "./pages/CaseStudies";
 import Appointment from "./pages/Appointment";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import News from "./pages/News";
+import NewsItem from "./pages/NewsItem";
+import Careers from "./pages/Careers";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import LegalDisclaimer from "./pages/LegalDisclaimer";
+import Sitemap from "./pages/Sitemap";
 import StickyContact from "./components/ui/StickyContact";
 
 const queryClient = new QueryClient({
@@ -44,6 +51,7 @@ const App = () => (
             <Route path="/practice-areas/real-estate" element={<PracticeAreas />} />
             <Route path="/practice-areas/ip" element={<PracticeAreas />} />
             <Route path="/practice-areas/family" element={<PracticeAreas />} />
+            <Route path="/practice-areas/tax" element={<PracticeAreas />} />
             <Route path="/attorneys" element={<Attorneys />} />
             <Route path="/attorneys/partners" element={<Attorneys />} />
             <Route path="/attorneys/associates" element={<Attorneys />} />
@@ -55,6 +63,19 @@ const App = () => (
             {/* Blog Routes */}
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            
+            {/* News Routes */}
+            <Route path="/news" element={<News />} />
+            <Route path="/news/:slug" element={<NewsItem />} />
+            
+            {/* Career Routes */}
+            <Route path="/careers" element={<Careers />} />
+            
+            {/* Legal Pages */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/disclaimer" element={<LegalDisclaimer />} />
+            <Route path="/sitemap" element={<Sitemap />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
