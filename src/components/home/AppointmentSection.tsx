@@ -89,68 +89,68 @@ const AppointmentSection = () => {
   }
 
   return (
-    <section className="page-section bg-light" data-aos="fade-up">
+    <section className="py-16 md:py-24 bg-light" data-aos="fade-up">
       <div className="container-lg">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Schedule a Consultation</h2>
-            <p className="text-secondary mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          <div className="pr-0 lg:pr-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 font-serif">Schedule a Consultation</h2>
+            <p className="text-secondary mb-8 text-lg">
               Our team of experienced Nigerian legal professionals is ready to assist you with your legal needs. Schedule a consultation with us to discuss your case.
             </p>
             
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start space-x-3">
-                <div className="bg-cream p-2 rounded-full text-charcoal mt-1">
-                  <Clock size={20} />
+            <div className="space-y-8 mb-10">
+              <div className="flex items-start space-x-4">
+                <div className="bg-cream p-3 rounded-full text-charcoal mt-1 flex-shrink-0">
+                  <Clock size={22} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Quick Response Time</h3>
+                  <h3 className="font-semibold text-lg mb-2">Quick Response Time</h3>
                   <p className="text-secondary">Our team will respond to your inquiry within 24 hours.</p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-3">
-                <div className="bg-cream p-2 rounded-full text-charcoal mt-1">
-                  <UserRound size={20} />
+              <div className="flex items-start space-x-4">
+                <div className="bg-cream p-3 rounded-full text-charcoal mt-1 flex-shrink-0">
+                  <UserRound size={22} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Personalized Attention</h3>
+                  <h3 className="font-semibold text-lg mb-2">Personalized Attention</h3>
                   <p className="text-secondary">Each case receives dedicated attention from our experienced attorneys.</p>
                 </div>
               </div>
               
-              <div className="flex items-start space-x-3">
-                <div className="bg-cream p-2 rounded-full text-charcoal mt-1">
-                  <FileText size={20} />
+              <div className="flex items-start space-x-4">
+                <div className="bg-cream p-3 rounded-full text-charcoal mt-1 flex-shrink-0">
+                  <FileText size={22} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-1">Thorough Case Analysis</h3>
+                  <h3 className="font-semibold text-lg mb-2">Thorough Case Analysis</h3>
                   <p className="text-secondary">We provide comprehensive evaluation of your legal situation under Nigerian law.</p>
                 </div>
               </div>
             </div>
             
-            <div className="p-6 bg-cream rounded-lg">
-              <h3 className="font-semibold text-lg mb-3">Contact Information</h3>
-              <div className="space-y-3">
+            <div className="p-8 bg-cream rounded-lg shadow-sm">
+              <h3 className="font-semibold text-xl mb-5">Contact Information</h3>
+              <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Phone size={18} className="text-accent" />
-                  <span>(+234) 123-456-7890</span>
+                  <Phone size={20} className="text-accent" />
+                  <span>+234 813 069 5026</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail size={18} className="text-accent" />
-                  <span>contact@ejeweke.com</span>
+                  <Mail size={20} className="text-accent" />
+                  <span>info@ejewekelegal.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Clock size={18} className="text-accent" />
+                  <Clock size={20} className="text-accent" />
                   <span>Monday-Friday: 9:00 AM - 5:00 PM</span>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="bg-offwhite rounded-lg p-6 shadow-sm border border-cream">
-            <h3 className="text-xl font-bold mb-6 pb-4 border-b border-cream">Book Your Appointment</h3>
+          <div className="bg-offwhite rounded-lg p-8 shadow-md border border-cream mt-8 lg:mt-0">
+            <h3 className="text-2xl font-bold mb-8 pb-4 border-b border-cream">Book Your Appointment</h3>
             
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -168,7 +168,7 @@ const AppointmentSection = () => {
                   )}
                 />
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
                     name="email"
@@ -198,7 +198,7 @@ const AppointmentSection = () => {
                   />
                 </div>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
                     name="date"
@@ -306,7 +306,7 @@ const AppointmentSection = () => {
                       <FormControl>
                         <Textarea 
                           placeholder="Please provide a brief description of your legal issue..." 
-                          className="resize-none min-h-[100px]"
+                          className="resize-none min-h-[120px]"
                           {...field}
                         />
                       </FormControl>
@@ -317,7 +317,7 @@ const AppointmentSection = () => {
                 
                 <Button 
                   type="submit" 
-                  className="w-full bg-accent hover:bg-accent-dark text-offwhite"
+                  className="w-full bg-accent hover:bg-accent-dark text-offwhite py-6 mt-4"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Processing..." : "Request Consultation"}

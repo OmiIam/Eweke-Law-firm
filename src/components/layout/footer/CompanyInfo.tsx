@@ -16,8 +16,8 @@ const CompanyInfo = () => {
           <Phone size={18} className="text-accent mr-3 mt-1 group-hover:text-accent-dark transition-colors" />
           <div>
             <p className="font-medium">Call Us</p>
-            <a href="tel:+1234567890" className="text-light/80 hover:text-accent transition-colors duration-200">
-              (123) 456-7890
+            <a href="tel:+2348130695026" className="text-light/80 hover:text-accent transition-colors duration-200">
+              +234 813 069 5026
             </a>
           </div>
         </div>
@@ -25,8 +25,8 @@ const CompanyInfo = () => {
           <Mail size={18} className="text-accent mr-3 mt-1" />
           <div>
             <p className="font-medium">Email Us</p>
-            <a href="mailto:info@ejeweke.com" className="text-light/80 hover:text-accent transition-colors duration-200">
-              info@ejeweke.com
+            <a href="mailto:info@ejewekelegal.com" className="text-light/80 hover:text-accent transition-colors duration-200">
+              info@ejewekelegal.com
             </a>
           </div>
         </div>
@@ -36,7 +36,7 @@ const CompanyInfo = () => {
             <p className="font-medium">Visit Us</p>
             <address className="text-light/80 not-italic">
               123 Legal Street<br />
-              New York, NY 10001
+              Lagos, Nigeria
             </address>
           </div>
         </div>

@@ -10,7 +10,7 @@ const StickyContact = () => {
       <Button 
         size="icon" 
         className="bg-highlight hover:bg-highlight/90 text-white rounded-full w-14 h-14 shadow-button hover:shadow-button-hover transition-all duration-300 transform hover:-translate-y-1 animate-fade-in"
-        onClick={() => window.location.href = 'tel:+1234567890'}
+        onClick={() => window.location.href = 'tel:+2348130695026'}
         aria-label="Call us"
       >
         <Phone size={22} className="animate-pulse-soft" />

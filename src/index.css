@@ -84,6 +84,14 @@
   .shadow-card {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
   }
+  
+  .shadow-button {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .shadow-button-hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
 }
 
 /* Custom animations and utility classes */
@@ -94,6 +102,10 @@
   
   .animate-slow-zoom {
     animation: slowZoom 30s ease-out infinite alternate;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulseSoft 2s infinite;
   }
   
   .delay-100 {
@@ -135,6 +147,17 @@
   }
   50% {
     opacity: 0;
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
   }
 }
 
