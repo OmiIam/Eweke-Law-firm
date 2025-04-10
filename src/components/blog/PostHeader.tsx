@@ -14,19 +14,22 @@ const PostHeader = ({ post }: PostHeaderProps) => {
     <div className="relative py-16 lg:py-20 overflow-hidden">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/75 to-primary/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/65 to-primary/80"></div>
         <img 
           src={post.coverImage} 
           alt={post.title} 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105 animate-slow-zoom"
         />
       </div>
+      
+      {/* Light pattern overlay */}
+      <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNjY2MiPjwvcmVjdD4KPC9zdmc+')]"></div>
       
       <div className="container-lg relative z-10">
         <div className="max-w-3xl mx-auto">
           <Link 
             to="/blog" 
-            className="inline-flex items-center text-light/80 mb-6 hover:text-highlight transition-colors group"
+            className="inline-flex items-center text-light/90 mb-6 hover:text-highlight transition-colors group"
           >
             <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
             <span>Back to all articles</span>

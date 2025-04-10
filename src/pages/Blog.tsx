@@ -8,6 +8,7 @@ import BlogList from '../components/blog/BlogList';
 import BlogSidebar from '../components/blog/BlogSidebar';
 import BlogPagination from '../components/blog/BlogPagination';
 import Chatbot from '../components/ui/chatbot';
+import { useIsMobile } from '../hooks/use-mobile';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -17,6 +18,7 @@ const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     // Initialize AOS animation library
@@ -78,10 +80,10 @@ const Blog = () => {
           onSearch={handleSearch} 
         />
         
-        <div className="container-lg py-16">
-          <div className="flex flex-col lg:flex-row gap-10">
+        <div className="container-lg py-8 md:py-16 px-4 sm:px-6">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
             {/* Main content */}
-            <div className="lg:w-2/3">
+            <div className="w-full lg:w-2/3">
               <BlogList 
                 currentPage={currentPage}
                 selectedCategory={selectedCategory}
@@ -95,12 +97,14 @@ const Blog = () => {
               />
             </div>
             
-            {/* Sidebar */}
-            <aside className="lg:w-1/3">
-              <BlogSidebar 
-                selectedCategory={selectedCategory} 
-                onCategoryChange={handleCategoryChange} 
-              />
+            {/* Sidebar - shown below content on mobile */}
+            <aside className="w-full lg:w-1/3 mt-8 lg:mt-0">
+              <div className={`${isMobile ? 'mt-8' : ''}`}>
+                <BlogSidebar 
+                  selectedCategory={selectedCategory} 
+                  onCategoryChange={handleCategoryChange} 
+                />
+              </div>
             </aside>
           </div>
         </div>
