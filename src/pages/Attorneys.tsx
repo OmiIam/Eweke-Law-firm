@@ -5,8 +5,11 @@ import Footer from '../components/layout/Footer';
 import Chatbot from '../components/ui/chatbot';
 import { ArrowRight, Mail, Linkedin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useIsMobile } from '../hooks/use-mobile';
 
 const Attorneys = () => {
+  const isMobile = useIsMobile();
+  
   const attorneys = [
     {
       id: 1,
@@ -63,12 +66,12 @@ const Attorneys = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative py-16 md:py-24 bg-primary">
+        <section className="relative py-12 md:py-16 lg:py-24 bg-primary">
           <div className="absolute inset-0 bg-gradient-to-r from-dark to-primary/80 z-0"></div>
-          <div className="container-lg relative z-10">
+          <div className="container-lg relative z-10 px-4 sm:px-6">
             <div className="max-w-3xl" data-aos="fade-up">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-light animate-fade-in">Our Legal Team</h1>
-              <p className="text-lg text-light/90 max-w-2xl mb-8 animate-slide-in">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-light animate-fade-in">Our Legal Team</h1>
+              <p className="text-base md:text-lg text-light/90 max-w-2xl mb-6 md:mb-8 animate-slide-in">
                 Meet our team of experienced Nigerian legal professionals dedicated to providing excellent legal representation and counsel.
               </p>
               <div className="w-20 h-1 bg-accent animate-slide-in"></div>
@@ -77,27 +80,27 @@ const Attorneys = () => {
         </section>
 
         {/* Attorneys Grid */}
-        <section className="py-16 bg-offwhite">
-          <div className="container-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className="py-10 md:py-16 bg-offwhite">
+          <div className="container-lg px-4 sm:px-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {attorneys.map((attorney) => (
                 <div key={attorney.id} className="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 transform hover:-translate-y-2 hover:shadow-md" data-aos="fade-up">
-                  <div className="h-60 overflow-hidden">
+                  <div className={`${isMobile ? 'h-48' : 'h-60'} overflow-hidden`}>
                     <img 
                       src={attorney.image} 
                       alt={attorney.name} 
                       className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1">{attorney.name}</h3>
-                    <p className="text-accent mb-4">{attorney.title}</p>
-                    <p className="text-bluegray mb-4">{attorney.bio}</p>
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-2">Areas of Expertise:</h4>
+                  <div className="p-4 md:p-6">
+                    <h3 className="text-lg md:text-xl font-bold mb-1">{attorney.name}</h3>
+                    <p className="text-accent mb-3 md:mb-4">{attorney.title}</p>
+                    <p className="text-bluegray mb-4 text-sm md:text-base">{attorney.bio}</p>
+                    <div className="mb-4 md:mb-6">
+                      <h4 className="font-semibold mb-2 text-sm md:text-base">Areas of Expertise:</h4>
                       <div className="flex flex-wrap gap-2">
                         {attorney.expertise.map((area, index) => (
-                          <span key={index} className="bg-cream px-3 py-1 rounded-full text-sm text-charcoal">
+                          <span key={index} className="bg-cream px-2 md:px-3 py-1 rounded-full text-xs md:text-sm text-charcoal">
                             {area}
                           </span>
                         ))}
@@ -105,13 +108,13 @@ const Attorneys = () => {
                     </div>
                     <div className="flex space-x-3">
                       <button className="p-2 rounded-full bg-accent/10 text-accent hover:bg-accent hover:text-light transition-colors duration-300">
-                        <Mail size={18} />
+                        <Mail size={isMobile ? 16 : 18} />
                       </button>
                       <button className="p-2 rounded-full bg-accent/10 text-accent hover:bg-accent hover:text-light transition-colors duration-300">
-                        <Phone size={18} />
+                        <Phone size={isMobile ? 16 : 18} />
                       </button>
                       <button className="p-2 rounded-full bg-accent/10 text-accent hover:bg-accent hover:text-light transition-colors duration-300">
-                        <Linkedin size={18} />
+                        <Linkedin size={isMobile ? 16 : 18} />
                       </button>
                     </div>
                   </div>
@@ -122,20 +125,20 @@ const Attorneys = () => {
         </section>
 
         {/* Join Our Team Section */}
-        <section className="py-16 bg-white">
-          <div className="container-lg">
-            <div className="bg-light rounded-lg shadow-sm p-8 md:p-12">
+        <section className="py-10 md:py-16 bg-white">
+          <div className="container-lg px-4 sm:px-6">
+            <div className="bg-light rounded-lg shadow-sm p-6 md:p-8 lg:p-12">
               <div className="max-w-3xl mx-auto text-center" data-aos="fade-up">
-                <h2 className="text-3xl font-bold mb-6">Join Our Legal Team</h2>
-                <p className="text-bluegray mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Join Our Legal Team</h2>
+                <p className="text-bluegray mb-6 md:mb-8 text-sm md:text-base">
                   EJ EWEKE & Co is always looking for talented legal professionals who are passionate about Nigerian law and committed to excellence. We offer a collaborative environment and opportunities for professional growth.
                 </p>
                 <Link 
                   to="/careers" 
-                  className="bg-accent hover:bg-accent-dark text-white font-medium py-3 px-6 rounded-md inline-flex items-center transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+                  className="bg-accent hover:bg-accent-dark text-white font-medium py-2 md:py-3 px-4 md:px-6 text-sm md:text-base rounded-md inline-flex items-center transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg"
                 >
                   <span className="mr-2">View Career Opportunities</span>
-                  <ArrowRight size={18} />
+                  <ArrowRight size={isMobile ? 16 : 18} />
                 </Link>
               </div>
             </div>
