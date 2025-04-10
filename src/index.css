@@ -72,7 +72,10 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+  html {
+    scroll-behavior: smooth;
   }
 }
 
@@ -165,9 +168,9 @@
   animation: blink 1s step-end infinite;
 }
 
-/* Custom scroll styles */
+/* Custom scroll styles - making them more subtle */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -175,10 +178,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ccc;
+  background-color: #ddd;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #aaa;
+  background-color: #ccc;
+}
+
+@keyframes kenBurns {
+  from {
+    transform: scale(1.0);
+  }
+  to {
+    transform: scale(1.05);
+  }
 }

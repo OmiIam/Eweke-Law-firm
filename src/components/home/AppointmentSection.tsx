@@ -8,11 +8,11 @@ const AppointmentSection = () => {
   const isMobile = useIsMobile();
   
   return (
-    <section className="py-12 md:py-16 lg:py-24 bg-light" data-aos="fade-up">
+    <section className="py-8 md:py-12 lg:py-16 bg-light" data-aos="fade-up">
       <div className="container-lg px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
           <AppointmentDescription />
-          <div className={`${isMobile ? 'mt-8' : ''}`}>
+          <div className={`${isMobile ? 'mt-6' : ''}`}>
             <AppointmentForm />
           </div>
         </div>
