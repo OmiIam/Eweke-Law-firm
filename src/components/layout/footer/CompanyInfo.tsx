@@ -1,49 +1,44 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 const CompanyInfo = () => {
   return (
-    <div className="col-span-1">
-      <div className="mb-4">
-        <Link to="/" className="inline-block">
-          <svg xmlns="http://www.w3.org/2000/svg" width="180" height="50" viewBox="0 0 1500 1500">
-            <rect width="1500" height="1500" x="0" y="0" fill="#102e44"></rect>
-            <g transform="scale(0.33) translate(920 920)" fill="#fff">
-              <path d="M5.635 368.593v-1.73h4.51q1.35 0 1.35-1.34v-54.53q0-1.15-1.35-1.15h-4.51v-1.73h30.43q7.59 0 10.66-.86-.87 3.93-.87 10.94v4.51h-2.2l-1.44-9.79q-.2-2.11-2.69-2.11h-20.16v26.21h19.29q1.16 0 1.35-1.35l.48-5.95h1.73v17.28h-1.73l-.48-5.95q-.19-1.34-1.35-1.34h-19.29v26.2h21.5q2.5 0 2.69-2.11l1.44-11.23h2.21v4.51q0 8.45.86 12.39-3.07-.87-10.65-.87Z"></path>
-              <path d="M123.335 308.113h13.05v1.73h-3.55q-1.34 0-1.82 1.34l-17.76 57.41h-3.27l-15.65-47.81-15.55 47.81h-3.26l-17.76-57.41q-.48-1.34-1.83-1.34h-3.55v-1.73h18.24v1.73h-4.8l13.73 46.37 13.15-40.51-1.44-4.52q-.48-1.34-1.82-1.34h-3.55v-1.73h18.24v1.73h-4.8l14.49 46.08 14.31-46.08h-4.8Z"></path>
-              <path d="M140.225 368.593v-1.73h4.51q1.35 0 1.35-1.34v-54.53q0-1.15-1.35-1.15h-4.51v-1.73h30.43q7.59 0 10.66-.86-.86 3.93-.86 10.94v4.51h-2.21l-1.44-9.79q-.19-2.11-2.69-2.11h-20.16v26.21h19.3q1.15 0 1.34-1.35l.48-5.95h1.73v17.28h-1.73l-.48-5.95q-.19-1.34-1.34-1.34h-19.3v26.2h21.5q2.5 0 2.69-2.11l1.44-11.23h2.21v4.51q0 8.45.86 12.39-3.07-.87-10.65-.87Z"></path>
-              <path d="M195.715 365.523v-54.53q0-1.15-1.34-1.15h-4.52v-1.73h19.59v1.73h-4.51q-1.35 0-1.35 1.15v54.53q0 1.34 1.35 1.34h4.51v1.73h-19.59v-1.73h4.52q1.34 0 1.34-1.34m30.34-13.73 2.2 8.83q1.44 5.96 4.61 5.96 1.63 0 2.55-1.2.91-1.2.91-2.88t-.29-3.12l1.82-.29q.39 1.44.39 3.17 0 3.45-2.07 5.47-2.06 2.01-5.32 2.01-8.07 0-10.56-10.27l-2.21-8.83q-1.63-6.24-4.51-8.69-2.88-2.45-8.16-2.45v-2.11l22.65-27.55h-4.8v-1.73h13.06v1.73h-2.59q-1.54 0-2.69 1.34l-21.51 26.02q7.4.1 11.14 4.03 3.74 3.94 5.38 10.56"></path>
-              <path d="M241.605 368.593v-1.73h4.51q1.34 0 1.34-1.34v-54.53q0-1.15-1.34-1.15h-4.51v-1.73h30.43q7.58 0 10.66-.86-.87 3.93-.87 10.94v4.51h-2.21l-1.44-9.79q-.19-2.11-2.68-2.11h-20.16v26.21h19.29q1.15 0 1.35-1.35l.48-5.95h1.72v17.28h-1.72l-.48-5.95q-.2-1.34-1.35-1.34h-19.29v26.2h21.5q2.5 0 2.69-2.11l1.44-11.23h2.21v4.51q0 8.45.86 12.39-3.07-.87-10.66-.87Z"></path>
-              <path d="M315.235 368.593v-1.73h4.51q1.35 0 1.35-1.34v-54.53q0-1.15-1.35-1.15h-4.51v-1.73h19.58v1.73h-4.51q-1.34 0-1.34 1.15v54.91h19.1q2.5 0 2.69-2.11l1.44-11.23h2.21v4.51q0 8.45.86 12.39-3.07-.87-10.65-.87Z"></path>
-              <path d="M358.625 368.593v-1.73h4.51q1.35 0 1.35-1.34v-54.53q0-1.15-1.35-1.15h-4.51v-1.73h30.43q7.59 0 10.66-.86-.86 3.93-.86 10.94v4.51h-2.21l-1.44-9.79q-.19-2.11-2.69-2.11h-20.16v26.21h19.3q1.15 0 1.34-1.35l.48-5.95h1.73v17.28h-1.73l-.48-5.95q-.19-1.34-1.34-1.34h-19.3v26.2h21.5q2.5 0 2.69-2.11l1.44-11.23h2.21v4.51q0 8.45.86 12.39-3.07-.87-10.65-.87Z"></path>
-              <path d="M435.815 309.743q-8.74 0-14.07 7.68t-5.33 21.03q0 13.34 5.38 20.93 5.38 7.58 13.49 7.58t11.33-4.18q3.21-4.17 3.21-12.24v-3.84q0-1.15-1.34-1.15h-6.43v-1.73h19.58v1.73h-2.59q-1.35 0-1.35 1.15v3.46q0 8.54-6.14 14.06-6.14 5.52-15.74 5.52-12.1 0-19.83-8.35-7.73-8.35-7.73-22.99 0-14.64 7.64-23.04 7.63-8.4 19.92-8.4 6.24 0 12.48 3.17 2.01 1.05 2.88 1.05 1.44 0 1.53-2.01l.1-1.63h1.82v16.6h-1.73q-.86-7.39-5.52-10.89-4.65-3.51-11.56-3.51"></path>
-              <path d="M516.935 368.593h-19.68v-1.73h6.24l-6.72-18.52h-21.12l-6.72 18.52h6.24v1.73h-14.5v-1.73h3.55q1.35 0 1.83-1.34l21.12-57.41h3.26l21.12 57.41q.48 1.34 1.82 1.34h3.56Zm-30.63-49.15-9.6 26.21h19.11Z"></path>
-              <path d="M519.335 368.593v-1.73h4.51q1.34 0 1.34-1.34v-54.53q0-1.15-1.34-1.15h-4.51v-1.73h19.58v1.73h-4.51q-1.35 0-1.35 1.15v54.91h19.11q2.49 0 2.69-2.11l1.44-11.23h2.2v4.51q0 8.45.87 12.39-3.07-.87-10.66-.87Z"></path>
-            </g>
-          </svg>
-        </Link>
-      </div>
-      <p className="text-light/80 text-base leading-relaxed mb-5">
-        Premier legal services with a commitment to excellence, integrity, and client satisfaction across Nigeria.
+    <div data-aos="fade-up">
+      <h2 className="text-2xl font-bold mb-6 font-serif">
+        EJ EWEKE <span className="text-red">&</span> Co
+      </h2>
+      <p className="text-light/80 mb-6">
+        A premier Nigerian law firm providing comprehensive legal services with expertise in corporate law, litigation, and property matters throughout Nigeria and West Africa.
       </p>
-      <div className="space-y-3">
-        <div className="flex items-start space-x-3">
-          <MapPin size={18} className="text-highlight mt-1 flex-shrink-0" />
-          <span className="text-light/80">123 Legal Street, Area Name<br />Lagos, Nigeria 100001</span>
+      <div className="space-y-4">
+        <div className="flex items-start group">
+          <Phone size={18} className="text-accent mr-3 mt-1 group-hover:text-accent-dark transition-colors" />
+          <div>
+            <p className="font-medium">Call Us</p>
+            <a href="tel:+2348130695026" className="text-light/80 hover:text-accent transition-colors duration-200">
+              +234 813 069 5026
+            </a>
+          </div>
         </div>
-        <div className="flex items-center space-x-3">
-          <Phone size={18} className="text-highlight flex-shrink-0" />
-          <a href="tel:+2341234567890" className="text-light/80 hover:text-light transition-colors">
-            +234 (123) 456-7890
-          </a>
+        <div className="flex items-start">
+          <Mail size={18} className="text-accent mr-3 mt-1" />
+          <div>
+            <p className="font-medium">Email Us</p>
+            <a href="mailto:info@ejewekelegal.com" className="text-light/80 hover:text-accent transition-colors duration-200">
+              info@ejewekelegal.com
+            </a>
+          </div>
         </div>
-        <div className="flex items-center space-x-3">
-          <Mail size={18} className="text-highlight flex-shrink-0" />
-          <a href="mailto:info@ejeweke.com" className="text-light/80 hover:text-light transition-colors">
-            info@ejeweke.com
-          </a>
+        <div className="flex items-start">
+          <MapPin size={18} className="text-accent mr-3 mt-1" />
+          <div>
+            <p className="font-medium">Visit Us</p>
+            <address className="text-light/80 not-italic">
+              123 Legal Street<br />
+              Lagos, Nigeria
+            </address>
+          </div>
         </div>
       </div>
     </div>
